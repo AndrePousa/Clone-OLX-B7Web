@@ -29,7 +29,7 @@ const Header = () => {
                   </li> 
                   <li>
                     <Link to="" className="button">Poste um anúncio</Link>
-                  </li>            
+                  </li>
                 </>
               }
               {!logged &&
