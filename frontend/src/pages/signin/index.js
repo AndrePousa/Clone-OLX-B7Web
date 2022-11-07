@@ -27,6 +27,8 @@ const Signin = () =>{
       window.location.href = '/';
     }
 
+    setDisabled(false);
+
   }
   return( 
      <PageContainer>
