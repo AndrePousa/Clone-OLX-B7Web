@@ -54,6 +54,13 @@ const OlxApi = {
   login: async(email, password) => {
     const json = await apiFetchPost('/user/signin', {email, password} );
     return json;
+  },
+  //Requisição para buscar os estados
+  getStates:async () =>{
+    const json = await apiFetchGet(
+      '/states'
+    );
+    return json.states;
   }
 };
 

@@ -3,7 +3,8 @@ import { Switch, Route  } from 'react-router-dom';
 import Home from './pages/home';
 import About from './pages/about';
 import NotFound from'./pages/notFound';
-import Signin from "./pages/signin";
+import SignIn from './pages/signIn';
+import SignUp from './pages/signUp';
 
 
 const Routes = ()=> {
@@ -15,8 +16,11 @@ const Routes = ()=> {
       <Route exact path='/about'>
         <About/>
       </Route>
-      <Route exact path='/signin'>
-        <Signin/>
+      <Route exact path='/signIn'>
+        <SignIn/>
+      </Route>
+      <Route exact path='/signUp'>
+        <SignUp/>
       </Route>
       <Route>
         <NotFound/>

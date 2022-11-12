@@ -1,11 +1,18 @@
 import React from 'react';
 import {HeaderArea} from './styled';
 import { Link } from 'react-router-dom';
-import { isLogged } from './../../../helpers/AuthHandler';
+import { doLogout, isLogged } from './../../../helpers/AuthHandler';
 
 const Header = () => {
 
   let logged = isLogged();
+
+  //remover o cookie do toquen e redirecionara pagina
+  const handleLogout = () =>{
+    doLogout();
+    //A pagina deve ser recarregada para todo alteração acontecer
+    window.location.href = '/';
+  }
 
   return(
     <HeaderArea>
@@ -25,7 +32,7 @@ const Header = () => {
                     <Link to="/my-account">Minha Conta</Link>
                   </li>
                   <li>
-                    <Link to="/logout">Sair</Link>
+                    <button onClick={handleLogout}>Sair</button>
                   </li> 
                   <li>
                     <Link to="" className="button">Poste um anúncio</Link>
