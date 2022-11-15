@@ -6,7 +6,7 @@ const Footer = () => {
     <FooterArea>
 
     </FooterArea>
-  )
+  );
 }
 
 export default Footer;

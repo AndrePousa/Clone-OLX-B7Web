@@ -45,7 +45,6 @@ const apiFetchGet = async (endpoint, body = []) =>{
     window.location.href = '/signin';
     return;
   }
-
   return json;
 }
 
@@ -55,12 +54,39 @@ const OlxApi = {
     const json = await apiFetchPost('/user/signin', {email, password} );
     return json;
   },
+
+  //requisição do processo de registro
+  register: async (name, email, password, stateLoc) =>{
+    const json = await apiFetchPost(
+      '/user/singup',
+      {name, email, password, state:stateLoc}
+    );
+    return json;
+  },
+
   //Requisição para buscar os estados
   getStates:async () =>{
     const json = await apiFetchGet(
       '/states'
     );
     return json.states;
+  },
+
+  //Requisição para buscar as cateforias
+  getCategories: async () => {
+    const json = await apiFetchGet(
+      '/categories'
+    );
+    return json.categories;
+  },
+
+  //Requisição que está recebendo as options
+  getAds: async (options) => {
+    const json = await apiFetchGet(
+      '/ad/list',
+      options
+    );
+    return json;
   }
 };
 

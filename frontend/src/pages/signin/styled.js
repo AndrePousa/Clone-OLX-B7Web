@@ -55,7 +55,6 @@ form{
           background-color:#006fce;
         
       }
-
     }
   }
 }
